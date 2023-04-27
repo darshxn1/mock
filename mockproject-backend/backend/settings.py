@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-01i8if-@n^9c%59w5axsmcfh)n2j%5!^yhc)ws++$y2_=71v=i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['allhosts']
+ALLOWED_HOSTS = allhosts
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -146,8 +146,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT =OS.path.join(BASE_DIR, 'staticfiles_build','static')
+MEDIA_URLS = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AWS_ACCESS_KEY_ID= ''
+AWS_SECRET_ACCESS_KEY = ' '
+AWS_STORAGE_BUCKET_NAME ='mockproject-s3'
+AWS_S3_SIGNATURE_NAME= 's3v4'
+AWS_S3_REGION_NAME 'ap-south-1'
+AWS_S3_FILE_OVERWRITE = False
+AMS_DEFAULT_ACL = None
+ANS_S3_VERITY = True
+DEFAULT_FILE_STORAGE= 'storages.backends.s3boto3.S3Boto3Storage
