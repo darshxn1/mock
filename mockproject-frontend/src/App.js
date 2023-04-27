@@ -24,7 +24,6 @@ function App() {
   useEffect(()=>{
     const getData = async () => {
       const data = await axios.get('http://3.83.117.61:8000/api/getUserData/');
-      return await res.json();
       setSearchData(data.data.msg)
     }
     getData();
